@@ -1,0 +1,257 @@
+/* =========================================
+   1. RESET & BASE STYLES
+   ========================================= */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #f8fafc; 
+    background-image: linear-gradient(
+        to bottom left, 
+        rgba(157, 87, 33, 0.702), /* Cokelat samar */
+        rgba(224, 155, 72, 0.348) 50%, 
+        #9a662a26 100%
+    );
+    background-attachment: fixed;
+}
+
+/* =========================================
+   2. NAVBAR & BRAND
+   ========================================= */
+.navbar {
+    background-color: #ab6821e4;
+    padding: 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    position: relative;
+}
+
+.navbar h1 {
+    font-size: 1.3rem;
+}
+
+.brand {
+    font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Dropdown & Hamburger */
+.hamburger {
+    position: relative;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger .dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 10px;
+    background: white;
+    min-width: 150px;
+    border-radius: 8px;
+    display: none; 
+    z-index: 1001;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hamburger .dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    gap: 8px;
+}
+
+.hamburger .dropdown a:hover {
+    background: #3d9530cd;
+    color: #f7f7f7;
+}
+
+.show {
+    display: block !important;
+}
+
+/* =========================================
+   3. LAYOUT (SIDEBAR & CONTENT)
+   ========================================= */
+.wrapper {
+    display: flex;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.sidebar {
+    width: 17rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex-shrink: 0;
+}
+
+.menu-box {
+    background-color: #578330;
+    color: white;
+    text-decoration: none;
+    padding: 1.45rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.menu-box:hover {
+    background-color: #466a25;
+    transform: translateY(-6px);
+}
+
+.main-content {
+    flex: 1; /* Agar mengambil sisa ruang dashboard */
+    padding: 30px;
+}
+
+/* Header di dalam Main Content */
+h2 {
+    margin-top: 25px;
+    margin-left: 20px; /* Disesuaikan agar lebih rapi */
+    color: #268e3ee4;
+}
+
+hr {
+    border: 0;
+    background: #48b361e4;
+    margin: 15px auto 30px auto;
+    height: 3px;
+    width: 100%;
+}
+
+/* =========================================
+   4. CARDS & CHARTS (DARI KODE SEBELUMNYA)
+   ========================================= */
+.content {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1.5rem;
+}
+
+.card {
+    background: #edf1e6;
+    padding: 1.1rem;
+    border-radius: 1rem;
+    flex: 1;
+    min-width: 370px;
+    max-width: 350px; 
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* =========================================
+   5. KHUSUS TABEL (DILINDUNGI WRAPPER)
+   ========================================= */
+.custom-table-wrapper {
+    font-family: 'Inter', sans-serif;
+    background-color: transparent; /* Ubah ke transparan agar menyatu dengan body */
+    padding: 10px 0;
+}
+
+.custom-table-wrapper .table-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 100%; /* Agar memenuhi lebar main-content */
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.custom-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table-wrapper th {
+    background-color: #f8fafc;
+    color: #64748b;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.custom-table-wrapper td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #edf2f7;
+    vertical-align: middle;
+    color: #334155;
+}
+
+.custom-table-wrapper .img-box {
+    width: 120px; /* Ukuran disesuaikan agar proporsional di dashboard */
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #e2e8f0;
+    display: block;
+}
+
+.custom-table-wrapper .id-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.custom-table-wrapper .category-badge {
+    background: #e0e7ff;
+    color: #4338ca;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.custom-table-wrapper .action-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.custom-table-wrapper .btn {
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    transition: 0.2s;
+}
+
+.custom-table-wrapper .btn-update { background: #2563eb; color: white; }
+.custom-table-wrapper .btn-update:hover { background: #1d4ed8; }
+
+.custom-table-wrapper .btn-hapus { background: #ef4444; color: white; }
+.custom-table-wrapper .btn-hapus:hover { background: #dc2626; }
