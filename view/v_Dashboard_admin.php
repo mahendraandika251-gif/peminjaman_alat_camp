@@ -63,7 +63,9 @@ menuDropdown.addEventListener("click", function(e) {
         <a href="view_admin/data_alat.php" class="menu-box">Data Alat</a>
         <a href="view_admin/peminjaman.php" class="menu-box">Peminjaman</a>
         <a href="view_admin/pengembalian.php" class="menu-box">Pengembalian</a>
+        <a href="view_admin/kategori.php" class="menu-box">Kategori</a>
         <a href="view_admin/log_aktivitas.php" class="menu-box">Log Aktivitas</a>
+        
     </aside>
 
     <main class="content">

@@ -20,7 +20,7 @@
         <i class="fa-solid fa-bars"></i>
         
         <div class="dropdown" id="menuDropdown">
-              <a href="../v_Dashboard_petugas.php">
+              <a href="../v_Dashboard_admin.php">
                 <i class="fa-solid fa-house-chimney"></i>
                 <span>Dashboard</span>
             </a>
