@@ -1,13 +1,17 @@
+<!-- controller untuk proses peminjaman alat -->
 <?php
 if (session_status() === PHP_SESSION_NONE) {
+    // session_start dijalankan untuk menyimpan data user, id dan role
     session_start();
 }
 include_once __DIR__ . '/../models/m_peminjaman.php';
 
 $peminjaman = new peminjaman();
+
 $id_session = $_SESSION['data']['id_user'] ?? null;
 $role_session = $_SESSION['data']['role'] ?? 'user';
 
+// aksi peminjaman
 try { 
     if (isset($_GET['aksi'])) {
         $aksi = $_GET['aksi'];
@@ -29,6 +33,8 @@ try {
             exit;
         } 
 
+        // aksi update status, apakah peminjaman disetujui atau tidak pesanan nya
+
         if ($aksi == 'update_status') {
     $id = $_GET['id'] ?? null; 
     $status_req = $_GET['status'] ?? null;
@@ -37,9 +43,8 @@ try {
         $result = $peminjaman->update_status_peminjaman($id, $status_req);
         
         if ($result) {
-            // Tentukan link tujuan berdasarkan role
-            // Pastikan session_start() sudah dipanggil di bagian paling atas file ini
-            $redirect_url = '../View/view_petugas/pengembalian.php'; // Default
+            
+            $redirect_url = '../View/view_petugas/pengembalian.php'; 
 
             if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
                 $redirect_url = '../View/view_admin/pengembalian.php';
@@ -59,7 +64,7 @@ try {
     exit;
 }
     } else {
-        // Ambil data untuk ditampilkan di View
+        // Ambil data semua data dan ditampilkan di view
         $data_peminjam = ($role_session == 'admin' || $role_session == 'petugas') 
                          ? $peminjaman->tampil_data_peminjam() 
                          : $peminjaman->tampil_data_peminjam($id_session);

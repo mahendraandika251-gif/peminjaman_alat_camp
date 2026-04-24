@@ -1,12 +1,12 @@
+<!-- proses login pengguna -->
 <?php
-// Pastikan path ke models/m_user.php sudah benar
 include_once '../models/m_pelanggan.php'; 
 session_start();
 $_SESSION['data'] = $data_pelanggan;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // PERBAIKAN: Nama class harus sesuai dengan yang ada di file model (m_pelanggan)
+  
     $user = new m_pelanggan(); 
     
     $input_user = $_POST['username'];

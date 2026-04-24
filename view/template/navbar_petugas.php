@@ -40,20 +40,20 @@
 const hamburgerBtn = document.getElementById("hamburgerBtn");
 const menuDropdown = document.getElementById("menuDropdown");
 
-// 1. Toggle tampil/sembunyi saat icon diklik
+
 hamburgerBtn.addEventListener("click", function(e) {
-    e.stopPropagation(); // Mencegah event klik menjalar ke document
+    e.stopPropagation(); 
     menuDropdown.classList.toggle("show");
 });
 
-// 2. Sembunyikan jika klik di luar area hamburger
+
 document.addEventListener("click", function(e) {
     if (!hamburgerBtn.contains(e.target)) {
         menuDropdown.classList.remove("show");
     }
 });
 
-// 3. Mencegah dropdown tertutup jika area di dalam dropdown diklik (opsional)
+
 menuDropdown.addEventListener("click", function(e) {
     e.stopPropagation();
 });

@@ -1,3 +1,4 @@
+<!-- mengelola proses riwayat pengembalian alat.” -->
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -23,7 +24,7 @@ try {
         exit;
     }
 
-    // Ambil data riwayat
+    // data ditampilkan
     if ($id_session) {
         $data_riwayat = $pengembalian->tampil_riwayat($id_session);
     }

@@ -1,3 +1,4 @@
+<!-- berfungsi untuk mengelola data peminjaman alat di database -->
 <?php 
 include_once 'm_koneksi.php';
 
@@ -31,7 +32,7 @@ class peminjaman {
     
     function update_status_peminjaman($id, $status) {
     if ($status === 'setujui') {
-        // 1. Ambil data user
+      
         $sql_cari = "SELECT id_user FROM peminjaman_alat WHERE kode_pinjam = '$id'";
         $res_cari = mysqli_query($this->conn, $sql_cari);
         $data = mysqli_fetch_assoc($res_cari);
@@ -39,16 +40,16 @@ class peminjaman {
         if ($data) {
             $id_user = $data['id_user'];
             
-            // 2. Masukkan ke tabel pengembalian
+           
             $sql_pindah = "INSERT INTO pengembalian (id_user, kode_pinjam) VALUES ('$id_user', '$id')";
             mysqli_query($this->conn, $sql_pindah);
 
-            // 3. JANGAN DIHAPUS, tapi update statusnya jadi 'Disetujui'
+           
             $sql_update = "UPDATE peminjaman_alat SET status = 'Disetujui' WHERE kode_pinjam = '$id'";
             return mysqli_query($this->conn, $sql_update);
         }
     } else {
-        // Jika ditolak, baru boleh dihapus atau diupdate status 'Ditolak'
+        
         return mysqli_query($this->conn, "DELETE FROM peminjaman_alat WHERE kode_pinjam = '$id'");
     }
     return false;

@@ -1,4 +1,4 @@
-/* Pastikan warna diterapkan ke seluruh layar */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -8,8 +8,8 @@ html, body {
 
 body {
     font-family: 'Segoe UI', Roboto, sans-serif;
-    /* BACKGROUND GRADIENT - Warna Earth Tone (Cokelat/Tan) */
-    background: #a8834a; /* Warna cadangan jika gradien gagal */
+    
+    background: #a8834a; 
     background: linear-gradient(145deg, #a8834a 0%, #ecd0a9 100%) fixed;
     background-attachment: fixed;
     color: #2d3436;
@@ -22,13 +22,13 @@ body {
     padding: 20px;
 }
 
-/* Header Area */
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 25px;
-    background: rgba(255, 255, 255, 0.2); /* Semi transparan */
+    background: rgba(255, 255, 255, 0.2); 
     backdrop-filter: blur(10px);
     border-radius: 12px;
     margin-bottom: 30px;
@@ -42,25 +42,25 @@ body {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-/* Judul Kategori */
+
 h2 {
-    color: #1b4332; /* Hijau Tua */
+    color: #1b4332; 
     font-size: 24px;
     margin-bottom: 15px;
     border-left: 6px solid #1b4332;
     padding-left: 15px;
 }
 
-/* Kontainer Tabel (Glassmorphism) */
+
 .card {
-    background: rgba(255, 255, 255, 0.9); /* Putih 90% agar teks hitam terbaca jelas */
+    background: rgba(255, 255, 255, 0.9); 
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Tabel Styling */
+
 .table-container {
     overflow-x: auto;
 }
@@ -71,7 +71,7 @@ table {
 }
 
 thead {
-    background-color: #1b4332; /* Hijau Gelap Forest */
+    background-color: #1b4332; 
 }
 
 th {
@@ -91,7 +91,7 @@ tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.03);
 }
 
-/* Tombol Aksi */
+
 .action-buttons {
     display: flex;
     gap: 10px;
@@ -108,7 +108,6 @@ tbody tr:hover {
     transition: all 0.3s ease;
 }
 
-/* Update - Biru */
 .btn-update {
     background-color: #007bff;
     color: white;
@@ -118,7 +117,7 @@ tbody tr:hover {
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
-/* Hapus - Merah */
+
 .btn-delete {
     background-color: #dc3545;
     color: white;
@@ -135,9 +134,9 @@ tbody tr:hover {
 
 
 
-/* --- Tambahan untuk Halaman Alat --- */
 
-/* Styling Foto Alat agar rapi di dalam tabel */
+
+
 .img-box {
     width: 60px;
     height: 60px;
@@ -147,7 +146,7 @@ tbody tr:hover {
     display: block;
 }
 
-/* Badge Kategori */
+
 .category-badge {
     background-color: rgba(27, 67, 50, 0.1);
     color: #1b4332;

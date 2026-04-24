@@ -1,3 +1,4 @@
+<!-- untuk mengelola data pengembalian alat, baik untuk user maupun petugas -->
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -6,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once __DIR__ . '/../models/m_pengembalian.php';
 $pengembalian = new pengembalian();
 
-// INSIALISASI WAJIB: Pastikan variabel selalu array agar View tidak error
+
 $data_pengembalian = [];
 
 try {
@@ -20,7 +21,7 @@ try {
             $data_pengembalian = $pengembalian->tampil_riwayat($id_session);
         }
     } else {
-        // Jika di halaman manajemen petugas (pengembalian.php)
+        // Jika di halaman manajemen petugas 
         $data_pengembalian = $pengembalian->tampil_data_petugas();
     }
 } catch (Exception $e) {

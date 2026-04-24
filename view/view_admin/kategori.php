@@ -87,7 +87,7 @@ include_once '../template/navbar.php';
       document.getElementById('tambahModal').style.display = 'none'; 
     }
 
-    // Tutup modal jika klik di area luar
+    
     window.onclick = function(event) {
       if (event.target.className === 'modal-overlay') {
         closeTambahModal();

@@ -1,9 +1,9 @@
 <?php
-// File: view/view_admin/daftar_peminjaman.php
+
 include_once '../../controller/c_peminjaman.php'; 
 include_once '../template/navbar_petugas.php';
 
-// Memisahkan data berdasarkan status menggunakan array_filter
+
 $data_menunggu = array_filter($data_peminjam, function($item) {
     return $item['status'] == 'Menunggu';
 });

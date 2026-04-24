@@ -1,9 +1,10 @@
+<!-- berfungsi untuk mengelola data user atau akun dalam sistem -->
 <?php
 include_once 'm_koneksi.php';
 
 class m_pelanggan {
 
-    // ==== fungsi login ====
+    //  fungsi login 
     function login($username)
     {
         $db = new koneksi();
@@ -22,7 +23,7 @@ class m_pelanggan {
             return NULL;
         }
     }
-
+    // fungsi tampil data
     function tampil_data()
     {
         $db = new koneksi();
@@ -40,7 +41,7 @@ class m_pelanggan {
             return false;
         }
     }
-
+    // fungsi edit
     function edit($id_user, $username, $email, $role)
     {
         $db = new koneksi();
@@ -53,7 +54,7 @@ class m_pelanggan {
 
         return mysqli_query($koneksi, $sql);
     }
-
+    // fungsi tambah data
     function tambah_data($username, $email, $password, $role)
     {
         $db = new koneksi();
@@ -63,7 +64,7 @@ class m_pelanggan {
         
         return mysqli_query($koneksi, $sql);
     }
-
+    // fungsi hapus data
     function hapus_data($id)
     {
         $db = new koneksi();

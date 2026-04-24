@@ -1,3 +1,4 @@
+<!-- controller untuk proses register dan tambah data pengguna -->
 <?php
 include_once __DIR__ . '/../models/m_pelanggan.php';
 
@@ -6,7 +7,7 @@ $pelanggan = new m_pelanggan();
 try {
     if (!empty($_GET['aksi'])) {
 
-        // ==== aksi register dan tambah data pengguna ====
+        //  aksi register dan tambah data pengguna 
         if ($_GET['aksi'] == 'register' || $_GET['aksi'] == 'tambah') {
             $username    = $_POST['username'];
             $email       = $_POST['email'];
@@ -35,7 +36,7 @@ try {
             }
         }
 
-        // ==== aksin hapus data ====
+        // aksin hapus data
         elseif ($_GET['aksi'] == 'hapus') {
             $id = $_GET['id_user'];
             $result = $pelanggan->hapus_data($id);
@@ -53,7 +54,7 @@ try {
             }
         }
 
-        // ==== aksi edit data ====
+        //  aksi edit data 
         elseif ($_GET['aksi'] == 'edit') {
             $id_user  = $_POST['id_user'];
             $username = $_POST['nama'];

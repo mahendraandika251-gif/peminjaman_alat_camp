@@ -1,6 +1,4 @@
-/* =========================================
-   1. RESET & BASE STYLES
-   ========================================= */
+
 * {
     box-sizing: border-box;
     font-family: "Segoe UI", sans-serif;
@@ -15,16 +13,14 @@ body {
     background-color: #f8fafc; 
     background-image: linear-gradient(
         to bottom left, 
-        rgba(157, 87, 33, 0.702), /* Cokelat samar */
+        rgba(157, 87, 33, 0.702), 
         rgba(224, 155, 72, 0.348) 50%, 
         #9a662a26 100%
     );
     background-attachment: fixed;
 }
 
-/* =========================================
-   2. NAVBAR & BRAND
-   ========================================= */
+
 .navbar {
     background-color: #ab6821e4;
     padding: 40px;
@@ -46,7 +42,7 @@ body {
     font-style: normal;
 }
 
-/* Dropdown & Hamburger */
+
 .hamburger {
     position: relative;
     font-size: 22px;
@@ -87,9 +83,6 @@ body {
     display: block !important;
 }
 
-/* =========================================
-   3. LAYOUT (SIDEBAR & CONTENT)
-   ========================================= */
 .wrapper {
     display: flex;
     padding: 1.5rem;
@@ -122,14 +115,14 @@ body {
 }
 
 .main-content {
-    flex: 1; /* Agar mengambil sisa ruang dashboard */
+    flex: 1; 
     padding: 30px;
 }
 
-/* Header di dalam Main Content */
+
 h2 {
     margin-top: 25px;
-    margin-left: 20px; /* Disesuaikan agar lebih rapi */
+    margin-left: 20px; 
     color: #268e3ee4;
 }
 
@@ -141,9 +134,7 @@ hr {
     width: 100%;
 }
 
-/* =========================================
-   4. CARDS & CHARTS (DARI KODE SEBELUMNYA)
-   ========================================= */
+
 .content {
     display: flex;
     flex-wrap: wrap; 
@@ -169,12 +160,10 @@ hr {
     font-size: 1rem;
 }
 
-/* =========================================
-   5. KHUSUS TABEL (DILINDUNGI WRAPPER)
-   ========================================= */
+
 .custom-table-wrapper {
     font-family: 'Inter', sans-serif;
-    background-color: transparent; /* Ubah ke transparan agar menyatu dengan body */
+    background-color: transparent; 
     padding: 10px 0;
 }
 
@@ -182,7 +171,7 @@ hr {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    width: 100%; /* Agar memenuhi lebar main-content */
+    width: 100%; 
     max-width: 1100px;
     margin: auto;
     overflow: hidden;
@@ -212,7 +201,7 @@ hr {
 }
 
 .custom-table-wrapper .img-box {
-    width: 120px; /* Ukuran disesuaikan agar proporsional di dashboard */
+    width: 120px; 
     height: 120px;
     border-radius: 8px;
     object-fit: cover;

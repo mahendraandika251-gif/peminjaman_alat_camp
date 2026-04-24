@@ -1,3 +1,4 @@
+<!-- proses logout/keluar dari halaman -->
 <?php
 session_start();
 

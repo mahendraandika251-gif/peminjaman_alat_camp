@@ -1,3 +1,5 @@
+<!-- proses untuk menambahkan, edit atau hapus untuk admin -->
+
 <?php
 include_once __DIR__ . '/../models/m_peralatan.php';
 $alat = new alat();
@@ -38,7 +40,7 @@ try {
         }
     }
     
-    // Inilah yang akan dikirim ke View
+    // setelah selesai data akan ditampilkan di view
     $data_alat = $alat->tampil_data_alat();
     $data_kategori = $alat->tampil_kategori();
     

@@ -1,3 +1,4 @@
+<!-- berfungsi untuk mengelola data pengembalian alat, baik untuk petugas maupun user -->
 <?php 
 include_once 'm_koneksi.php';
 
@@ -49,10 +50,9 @@ class pengembalian {
         return $data;
     }
 
-    // FUNGSI PROSES PINDAH DATA (DENGAN PERBAIKAN FOREIGN KEY)
+    // FUNGSI PROSES PINDAH DATA 
     public function pindah_data($id, $status_req) {
-        // 1. Ambil data gabungan dari pengembalian & peminjaman_alat
-        // Kita wajib mengambil id_sewa yang asli agar Foreign Key di riwayat_peminjaman terpenuhi
+      
         $sql_cari = "SELECT p.Id_sewa, pa.id_user, pa.nama_peminjam, pa.tanggal_meminjam 
                      FROM pengembalian p
                      JOIN peminjaman_alat pa ON p.kode_pinjam = pa.kode_pinjam
@@ -67,8 +67,7 @@ class pengembalian {
         if ($data) {
             $tgl_kembali = date('Y-m-d');
             
-            // 2. Insert ke riwayat_peminjaman
-            // Pastikan kolom id_sewa diisi dengan $data['id_sewa'] yang valid
+            
             $sql_ins = "INSERT INTO riwayat_peminjaman (id_user, Id_sewa, nama_peminjam, tanggal_peminjaman, tanggal_pengembalian) 
                         VALUES (?, ?, ?, ?, ?)";
             
@@ -82,14 +81,14 @@ class pengembalian {
             );
             
             if (mysqli_stmt_execute($stmt_ins)) {
-            // MATIKAN pengecekan kunci agar bisa menghapus
+            
             mysqli_query($this->conn, "SET FOREIGN_KEY_CHECKS = 0");
 
             $id_clean = mysqli_real_escape_string($this->conn, $id);
             mysqli_query($this->conn, "DELETE FROM pengembalian WHERE kode_pinjam = '$id_clean'");
             $del = mysqli_query($this->conn, "DELETE FROM peminjaman_alat WHERE kode_pinjam = '$id_clean'");
 
-            // HIDUPKAN kembali pengecekan (Wajib!)
+            
             mysqli_query($this->conn, "SET FOREIGN_KEY_CHECKS = 1");
 
             return $del;

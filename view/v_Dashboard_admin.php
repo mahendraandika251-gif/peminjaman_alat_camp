@@ -39,18 +39,18 @@ session_start();
 <script>
 const hamburgerBtn = document.getElementById("hamburgerBtn");
 const menuDropdown = document.getElementById("menuDropdown");
-// 1. Toggle tampil/sembunyi saat icon diklik
+//  Toggle tampil/sembunyi saat icon diklik
 hamburgerBtn.addEventListener("click", function(e) {
-    e.stopPropagation(); // Mencegah event klik menjalar ke document
+    e.stopPropagation(); 
     menuDropdown.classList.toggle("show");
 });
-// 2. Sembunyikan jika klik di luar area hamburger
+
 document.addEventListener("click", function(e) {
     if (!hamburgerBtn.contains(e.target)) {
         menuDropdown.classList.remove("show");
     }
 });
-// 3. Mencegah dropdown tertutup jika area di dalam dropdown diklik (opsional)
+
 menuDropdown.addEventListener("click", function(e) {
     e.stopPropagation();
 });
@@ -108,11 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-    // ===== BAR CHART =====
+   
     new Chart(document.getElementById('chartBarang'), {
         type: 'bar',
         data: {
-            labels: ['Laptop', 'Proyektor', 'Kamera', 'Mouse'],
+            labels: ['Tenda', 'matras', 'sleeping bag', ''],
             datasets: [{
                 label: 'Jumlah Peminjaman',
                 data: [25, 18, 12, 9],
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
         legend: {
             position: 'top',
             labels: {
-                padding: 4,      // ← jarak legend ke chart diperkecil
+                padding: 4,      
                 font: { size: 11 }
             }
         }
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
         y: {
             beginAtZero: true,
             ticks: {
-                padding: 2,     // ← jarak angka ke chart
+                padding: 2,     
                 font: { size: 10 }
             }
         },

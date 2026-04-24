@@ -163,7 +163,7 @@ include_once '../template/navbar.php';
     </div>
   </div>
 
-  <!-- ================= tampilqn tambah data ================= -->
+  
   <div id="tambahModal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
@@ -199,7 +199,7 @@ include_once '../template/navbar.php';
     </div>
   </div>
 
-  <!-- ================= tampilan edit data ================= -->
+  
   <div id="updateModal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">

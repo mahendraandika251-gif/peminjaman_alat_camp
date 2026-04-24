@@ -1,4 +1,4 @@
-<!-- navbar -->
+<!-- navbar admin -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,29 +14,19 @@
 
 <body>
    <div class="navbar">
-    <h1>Welcome Petugas</h1>
+    <h1>Welcome Admin</h1>
     <h1 class="brand">CampingYuk!</h1>
 
     <div class="hamburger" id="hamburgerBtn">
         <i class="fa-solid fa-bars"></i>
         
         <div class="dropdown" id="menuDropdown">
-              <a href="">
+              <a href="../v_Dashboard_petugas.php">
                 <i class="fa-solid fa-house-chimney"></i>
                 <span>Dashboard</span>
             </a>
-            <a href="../view_petugas/menyetujui.php">
-                <i class="fa-solid fa-hand-holding"></i>
-                <span>Peminjaman</span>
-            </a>
-            <a href="../view_petugas/pengembalian.php">
-                <i class="fa-solid fa-reply"></i>
-                <span>Pengembalian</span>
-            </a>
-            <a href="../view_petugas/log_aktivitas.php">
-                <i class="fa-solid fa-user-clock"></i>
-                <span>Log Aktivitas</span>
-            </a>
+            
+            
             <a href="../../controller/logout.php">
                 <i class="fa-duotone fa-solid fa-right-from-bracket"></i>
                 <span>Logout</span>

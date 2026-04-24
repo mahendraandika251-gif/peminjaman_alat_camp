@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2026 at 04:20 PM
+-- Generation Time: Apr 25, 2026 at 12:32 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,7 +39,8 @@ CREATE TABLE `kategori` (
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 (1, 'Tenda'),
 (2, 'Matras'),
-(4, 'Sleeping Bag ');
+(4, 'Sleeping Bag '),
+(5, 'alat makan');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,8 @@ CREATE TABLE `peminjaman_alat` (
 
 INSERT INTO `peminjaman_alat` (`id_user`, `id_alat`, `kode_pinjam`, `nama_peminjam`, `tanggal_meminjam`, `batas_pengembalian`, `jumlah`, `status`) VALUES
 (3, 1, 1, 'udin', '2026-04-19', '2026-04-25', 3, 'Disetujui'),
-(3, 8, 75, 'udin', '2026-04-28', '0000-00-00', 1, 'Menunggu');
+(3, 7, 79, 'udin', '2026-04-30', '0000-00-00', 1, 'Menunggu'),
+(5, 4, 80, 'anies', '2026-04-28', '0000-00-00', 1, 'Menunggu');
 
 -- --------------------------------------------------------
 
@@ -131,7 +133,6 @@ INSERT INTO `peralatan` (`id_alat`, `id_kategori`, `nama_alat`, `jumlah`, `foto_
 (3, 1, 'Tenda', 12, '../asset/tenda_5.jpeg', '130000'),
 (4, 2, 'matras', 50, '../asset/matras_1.jpeg', '100000'),
 (5, 2, 'matras', 30, '../asset/matras_2.jpeg', '70000'),
-(6, 2, 'matras', 33, '../asset/matras_3.jpeg', '40000'),
 (7, 2, 'matras', 60, '../asset/matras_4.jpeg', '80000'),
 (8, 2, 'matras', 40, '../asset/matras_5.jpeg', '50000'),
 (9, 4, 'sleeping-bag', 30, '../asset/sleeping-bag_1.jpeg', '70000'),
@@ -162,7 +163,8 @@ INSERT INTO `riwayat_peminjaman` (`id_user`, `Id_sewa`, `nama_peminjam`, `tangga
 (3, 12, 'udin', '2026-03-25', '2026-04-22', 23),
 (3, 13, 'udin', '2026-04-27', '2026-04-24', 24),
 (5, 14, 'anies', '2026-04-25', '2026-04-24', 25),
-(5, 15, 'anies', '2026-05-19', '2026-04-24', 26);
+(5, 15, 'anies', '2026-05-19', '2026-04-24', 26),
+(3, 16, 'udin', '2026-04-28', '2026-04-24', 27);
 
 -- --------------------------------------------------------
 
@@ -251,7 +253,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `log_aktivitas`
@@ -263,13 +265,13 @@ ALTER TABLE `log_aktivitas`
 -- AUTO_INCREMENT for table `peminjaman_alat`
 --
 ALTER TABLE `peminjaman_alat`
-  MODIFY `kode_pinjam` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `kode_pinjam` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `pengembalian`
 --
 ALTER TABLE `pengembalian`
-  MODIFY `Id_sewa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `Id_sewa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `peralatan`
@@ -281,13 +283,13 @@ ALTER TABLE `peralatan`
 -- AUTO_INCREMENT for table `riwayat_peminjaman`
 --
 ALTER TABLE `riwayat_peminjaman`
-  MODIFY `id_riwayat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_riwayat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

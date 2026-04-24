@@ -1,3 +1,4 @@
+<!-- berfungsi untuk mengelola data peralatan atau barang yang bisa dipinjam -->
 <?php 
 include_once 'm_koneksi.php';
 

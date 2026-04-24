@@ -1,3 +1,4 @@
+<!-- fungsinya untuk menghubungkan data ke datasabe -->
 <?php
 
 class Koneksi {
@@ -23,8 +24,8 @@ class Koneksi {
     }
 }
 
-// buat objek
+
 $koneksi = new Koneksi();
 
-// buat variabel $conn untuk dipakai di file lain
+
 $conn = $koneksi->koneksi;

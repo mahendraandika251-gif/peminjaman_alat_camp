@@ -19,7 +19,7 @@
             background-attachment: fixed;
         }
 
-        /* SIDEBAR */
+        
         .sidebar {
             width: 250px;
             height: 100vh;
@@ -55,13 +55,12 @@
 
         .sidebar i { margin-right: 10px; }
 
-        /* CONTAINER UTAMA (NAVBAR + CONTENT) */
+       
         .main-container {
             margin-left: 250px;
             padding: 20px;
         }
 
-        /* HEADER / NAVBAR */
         .header {
             display: flex;
             justify-content: space-between;

@@ -1,3 +1,4 @@
+<!-- berfungsi untuk mengelola data kategori di database -->
 <?php
 include_once 'm_koneksi.php';
 

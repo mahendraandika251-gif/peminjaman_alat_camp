@@ -1,6 +1,6 @@
 <?php
 include_once '../../controller/c_data.p.php'; 
-include_once '../template/navbar_pet.php';
+include_once '../template/navbar_admin.php';
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -20,35 +20,7 @@ include_once '../template/navbar_pet.php';
             <i class="fas fa-print"></i> Cetak Laporan
         </button>
     </div>
-    <hr>
-
-    <h3 class="section-title">Menunggu Pengembalian <span class="count-badge"><?= count($data_menunggu) ?></span></h3>
-    <div class="table-container" style="margin-bottom: 30px;">
-      <table border="1" width="100%" style="border-collapse: collapse;">
-        <thead>
-          <tr style="background-color: #222; color: white;">
-            <th>Nama Peminjam</th>
-            <th>Alat</th>
-            <th>Tgl Pinjam</th>
-            <th>Batas Kembali</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php if (!empty($data_menunggu)): ?>
-            <?php foreach ($data_menunggu as $row): ?>
-              <tr>
-                <td><?= htmlspecialchars($row->nama_peminjam) ?></td>
-                <td><?= htmlspecialchars($row->nama_alat ?? '-') ?></td>
-                <td align="center"><?= $row->tanggal_meminjam ?></td>
-                <td align="center"><?= $row->batas_pengembalian ?></td>
-              </tr>
-            <?php endforeach; ?>
-          <?php else: ?>
-            <tr><td colspan="4" align="center" style="padding: 15px;">Kosong.</td></tr>
-          <?php endif; ?>
-        </tbody>
-      </table> 
-    </div>
+    
 
     <h3 class="section-title">Semua Riwayat Peminjaman <span class="count-badge"><?= count($data_riwayat_all) ?></span></h3>
     <div class="table-container">

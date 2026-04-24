@@ -1,3 +1,4 @@
+<!-- untuk mengambil data pengembalian dari database -->
 <?php
 class ModelPengembalian {
     private $db;
@@ -23,7 +24,7 @@ class ModelPengembalian {
     }
 
     public function getAllRiwayat() {
-        // Alur: Riwayat -> Pengembalian (id_sewa) -> Peminjaman (kode_pinjam) -> Peralatan (id_alat)
+        
         $sql = "SELECT r.*, a.nama_alat 
                 FROM riwayat_peminjaman r
                 LEFT JOIN pengembalian pb ON r.id_sewa = pb.id_sewa

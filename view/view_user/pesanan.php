@@ -1,22 +1,22 @@
 <?php
 session_start();
 
-// ===============================
+
 // CEK LOGIN
-// ===============================
+
 if(!isset($_SESSION['data'])){
     header("Location: ../../index.php");
     exit;
 }
 
-// ===============================
+
 // KONEKSI DATABASE
-// ===============================
+
 $conn = mysqli_connect("", "root", "", "peminjaman_alat");
 
-// ===============================
+
 // AMBIL ID
-// ===============================
+
 $id_target = $_GET['id'] ?? null;
 
 if(!$id_target){
@@ -24,9 +24,8 @@ if(!$id_target){
     exit;
 }
 
-// ===============================
 // AMBIL DATA ALAT
-// ===============================
+
 $query = "SELECT peralatan.*, kategori.nama_kategori 
           FROM peralatan 
           INNER JOIN kategori ON peralatan.id_kategori = kategori.id_kategori 
@@ -34,17 +33,17 @@ $query = "SELECT peralatan.*, kategori.nama_kategori
 $result = mysqli_query($conn, $query);
 $data = mysqli_fetch_object($result);
 
-// ===============================
+
 // CEK DATA
-// ===============================
+
 if(!$data){
     echo "<h2 style='text-align:center;color:white;margin-top:50px;'>Data tidak ditemukan 😢</h2>";
     exit;
 }
 
-// ===============================
+
 // AMBIL NAMA USER
-// ===============================
+
 $nama_user = $_SESSION['data']['nama'] 
     ?? $_SESSION['data']['username'] 
     ?? 'User';

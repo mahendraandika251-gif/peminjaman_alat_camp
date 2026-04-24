@@ -17,14 +17,14 @@
             display: none !important;
         }
 
-        /* Atur agar konten memenuhi kertas */
+     
         .main-content {
             margin: 0 !important;
             padding: 0 !important;
             width: 100% !important;
         }
 
-        /* Tambahkan Judul Laporan saat diprint */
+        
         .main-content::before {
             content: "LAPORAN PENYEWAAN ALAT YOUKCAMP";
             display: block;

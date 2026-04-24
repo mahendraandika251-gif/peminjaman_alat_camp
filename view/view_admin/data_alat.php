@@ -163,13 +163,13 @@ include_once '../template/navbar.php';
       document.getElementById('tambahModal').style.display = 'none'; 
     }
     
-    // id_kat adalah ID Kategori (Integer) dari database
+    
     function openUpdateModal(id, nama, jumlah, id_kat, foto, harga) {
       document.getElementById('updateModal').style.display = 'flex';
       document.getElementById('modal_id_alat').value = id;
       document.getElementById('modal_nama_alat').value = nama;
       document.getElementById('modal_jumlah').value = jumlah;
-      document.getElementById('modal_id_kategori').value = id_kat; // Mengisi dropdown dengan ID
+      document.getElementById('modal_id_kategori').value = id_kat; 
       document.getElementById('modal_foto_alat').value = foto;
       document.getElementById('modal_harga').value = harga;
     }

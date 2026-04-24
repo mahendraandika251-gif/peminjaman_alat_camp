@@ -1,3 +1,4 @@
+<!-- berfungsi untuk memproses pengembalian alat dan menyimpan ke dalam riwayat -->
 <?php 
 include_once 'm_koneksi.php';
 
@@ -19,7 +20,7 @@ class pengembalian {
 
         if ($data) {
             $tgl_kembali = date('Y-m-d');
-            // Pastikan nama kolom di tabel riwayat_peminjaman sesuai (id_sewa, id_user, dll)
+            
             $sql_ins = "INSERT INTO riwayat_peminjaman (id_user, id_sewa, nama_peminjam, tanggal_peminjaman, tanggal_pengembalian) VALUES (?, ?, ?, ?, ?)";
             $stmt_ins = mysqli_prepare($this->conn, $sql_ins);
             mysqli_stmt_bind_param($stmt_ins, "iisss", $data['id_user'], $data['kode_pinjam'], $data['nama_peminjam'], $data['tanggal_meminjam'], $tgl_kembali);

@@ -1,8 +1,8 @@
 <?php
-// File: view/view_user/daftar_peminjaman.php
+
 include_once '../../controller/c_peminjaman.php';
 
-// Proteksi halaman: Jika tidak ada session, tendang ke login
+
 if (!isset($_SESSION['data']['id_user'])) {
     header("Location: ../../index.php");
     exit;
@@ -19,7 +19,7 @@ include_once '../template/navbar_adm.php';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dashboard | YOUKCAMP</title>
+  <title>Dashboard | langkah rimba</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -143,12 +143,10 @@ include_once '../template/navbar_adm.php';
     </div>
   </div>
 
-  <footer class="mt-12 py-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-400">
-    &copy; 2026 YOUKCAMP - Sistem Persewaan Alat Camping
-  </footer>
+  
 
   <script>
-    // Theme Toggle Logic
+   
     const root = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
     
@@ -161,11 +159,11 @@ include_once '../template/navbar_adm.php';
       localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
     });
 
-    // Action Function
+    
     function aksiUser(id, jenis) {
       let statusTujuan = (jenis === 'kembali') ? "Barang Dikembalikan" : "Barang Hilang";
       if (confirm("Apakah Anda yakin memproses: " + statusTujuan + "?")) {
-        // Mengarahkan ke controller pengembalian untuk update database
+        
         window.location.href = "../../controller/c.pengembalian.php?aksi=update_status&id=" + id + "&status=" + statusTujuan;
       }
     }
